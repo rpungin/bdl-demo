@@ -2,8 +2,8 @@ import 'package:bdl_demo/core/constants.dart';
 import 'package:bdl_demo/core/presentation/widgets/activity_indicator.dart';
 import 'package:bdl_demo/core/presentation/widgets/error_view.dart';
 import 'package:bdl_demo/core/presentation/widgets/page_background.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/calendar_view.dart';
-import 'package:bdl_demo/features/games/presentation/providers/schedule_providers.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/providers/schedule_provider.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

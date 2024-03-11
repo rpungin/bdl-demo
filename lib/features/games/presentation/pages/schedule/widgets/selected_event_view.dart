@@ -1,5 +1,5 @@
-import 'package:bdl_demo/features/games/presentation/pages/schedule/game_event_card.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/selected_event_provider.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/game_event_card.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/selected_event_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

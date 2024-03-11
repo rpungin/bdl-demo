@@ -19,7 +19,7 @@ class ScheduleStateNotifier extends StateNotifier<AsyncValue<List<Game>>> {
   ScheduleStateNotifier({required GetScheduleUseCase getScheduleUseCase})
       : _getScheduleUseCase = getScheduleUseCase, super(const AsyncValue.loading());
 
-  Future<void> getSchedule(String gameId) async {
-    state = await _getScheduleUseCase.call(gameId);
+  Future<void> getSchedule(String teamId) async {
+    state = await _getScheduleUseCase.call(teamId);
   }
 }

@@ -1,6 +1,6 @@
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/game_event_card.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/game_event_card.dart';
 import 'package:flutter/material.dart';
 
 class EventListView extends StatelessWidget {

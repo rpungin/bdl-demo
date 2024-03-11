@@ -1,4 +1,4 @@
-import 'package:bdl_demo/features/games/presentation/pages/schedule/schedule_view.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/schedule_view.dart';
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatelessWidget {

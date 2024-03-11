@@ -78,6 +78,13 @@ class AppTheme {
             borderSide: const BorderSide(color: colorAccent),
           ),
         ),
+        cardTheme: const CardTheme(
+          elevation: 10,
+          clipBehavior: Clip.antiAlias,
+          shape: RoundedRectangleBorder(
+              // side: BorderSide(color: AppTheme.colorTextLight),
+              borderRadius: AppTheme.borderRadiusAll),
+        ),
         dialogTheme: const DialogTheme(
             backgroundColor: colorBackground,
             shape: RoundedRectangleBorder(

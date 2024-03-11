@@ -11,6 +11,7 @@ part of 'nhl_api.dart';
 class _NhlApi implements NhlApi {
   _NhlApi(
     this._dio, {
+    // ignore: unused_element
     this.baseUrl,
   }) {
     baseUrl ??= 'https://api-web.nhle.com/v1';

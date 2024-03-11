@@ -1,4 +1,5 @@
 import 'package:bdl_demo/core/presentation/widgets/page_background.dart';
+import 'package:bdl_demo/features/games/presentation/pages/home/widgets/upcoming_games_view.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,7 +8,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Stack(
-      children: [PageBackground()],
+      children: [PageBackground(),
+      Column(children: [
+        UpcomingGamesView(),
+      ],)
+      ],
     );
   }
 }

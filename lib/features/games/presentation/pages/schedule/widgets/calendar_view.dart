@@ -2,10 +2,10 @@ import 'package:bdl_demo/core/extensions/context_extensions.dart';
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/core/presentation/widgets/page_background.dart';
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/calendar_day_cell.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/game_by_date_provider.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/selected_event_provider.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/selected_event_view.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/calendar_day_cell.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/game_by_date_provider.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/selected_event_provider.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/selected_event_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -29,10 +29,10 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const BlurredPageBackground(),
-        Container(
-          color: Colors.white.withOpacity(0.8),
-        ),
+        //const BlurredPageBackground(),
+        // Container(
+        //   color: Colors.white.withOpacity(0.8),
+        // ),
         SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(AppTheme.gridSpacing),
@@ -54,7 +54,6 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
     final firstDay = games.firstOrNull?.startTimeInLocalTZ() ?? now;
     final lastDay = games.lastOrNull?.startTimeInLocalTZ() ?? now;
     return Card(
-      elevation: AppTheme.cardElevation,
       child: TableCalendar(
         focusedDay: now,
         firstDay: firstDay,

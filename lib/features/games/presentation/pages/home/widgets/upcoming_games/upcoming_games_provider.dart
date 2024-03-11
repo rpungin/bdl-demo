@@ -6,7 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final upcomingGamesProvider = StateNotifierProvider<
         UpcomingGamesStateStateNotifier, AsyncValue<List<Game>>>(
     (ref) => UpcomingGamesStateStateNotifier(
-        getScheduleUseCase: GetScheduleUseCase(repository: ref.read(repositoryProvider))));
+        getScheduleUseCase:
+            GetScheduleUseCase(repository: ref.read(gamesRepositoryProvider))));
 
 class UpcomingGamesStateStateNotifier
     extends StateNotifier<AsyncValue<List<Game>>> {

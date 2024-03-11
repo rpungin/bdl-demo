@@ -7,13 +7,15 @@ class PlaceHolderPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          text,
-          style: context.textTheme.titleLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+    return Center(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            text,
+            style: context.textTheme.titleLarge
+                ?.copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );

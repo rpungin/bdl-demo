@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final lastGameProvider =
     StateNotifierProvider<LastGameStateNotifier, AsyncValue<Game?>>((ref) =>
         LastGameStateNotifier(
-            getScheduleUseCase:
-                GetLastGameUseCase(repository: ref.read(repositoryProvider))));
+            getScheduleUseCase: GetLastGameUseCase(
+                repository: ref.read(gamesRepositoryProvider))));
 
 class LastGameStateNotifier extends StateNotifier<AsyncValue<Game?>> {
   final GetLastGameUseCase _getLastGameUseCase;

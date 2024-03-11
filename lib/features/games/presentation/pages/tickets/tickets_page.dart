@@ -12,7 +12,7 @@ class TicketsPage extends StatelessWidget {
       child: Stack(
         children: [
           PageBackground(),
-          Center(child: PlaceHolderPageView(text: "Tickets")),
+          PlaceHolderPageView(text: "Tickets"),
         ],
       ),
     ));

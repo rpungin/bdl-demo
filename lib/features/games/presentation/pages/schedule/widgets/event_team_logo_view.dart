@@ -19,8 +19,8 @@ class EventTeamLogoView extends StatelessWidget {
           height: logoSize,
         ),
         Text(
-          score?.toString() ?? team.abbrev,
-          style: context.textTheme.bodyMedium
+          score?.toString() ?? "",
+          style: context.textTheme.titleMedium
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
       ],

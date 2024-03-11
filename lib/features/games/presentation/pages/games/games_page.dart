@@ -12,7 +12,7 @@ class GamesPage extends StatelessWidget {
       child: Stack(
         children: [
           PageBackground(),
-          Center(child: PlaceHolderPageView(text: "Games")),
+          PlaceHolderPageView(text: "Games"),
         ],
       ),
     ));

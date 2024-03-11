@@ -6,12 +6,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final upcomingGamesProvider = StateNotifierProvider<
         UpcomingGamesStateStateNotifier, AsyncValue<List<Game>>>(
     (ref) => UpcomingGamesStateStateNotifier(
-        getScheduleUseCase:
-            GetUpcomingGamesUseCase(repository: ref.read(repositoryProvider))));
+        getScheduleUseCase: GetUpcomingGamesUseCase(
+            repository: ref.read(gamesRepositoryProvider))));
 
 class UpcomingGamesStateStateNotifier
     extends StateNotifier<AsyncValue<List<Game>>> {
-      
   static const upcomingEventsLimit = 3;
 
   final GetUpcomingGamesUseCase _getUpcomingGamesUseCase;

@@ -9,14 +9,17 @@ class PageNavigationMenuData {
   final String titleText;
   final Widget? titleWidget;
   final Widget icon;
-  final Widget destinationPage;
+  final Widget? destinationPage;
+  final String? destinationRouteName;
   final BottomNavigationBarItem bottomNavigationBarItem;
   PageNavigationMenuData(this.context,
       {required this.id,
       required this.titleText,
       this.titleWidget,
       required this.icon,
-      required this.destinationPage})
+      this.destinationPage,
+      this.destinationRouteName,
+      })
       : bottomNavigationBarItem =
             BottomNavigationBarItem(label: titleText, icon: icon);
 

@@ -5,5 +5,5 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final apiProvider = Provider((ref) => NhlApi(Dio()));
 
-final repositoryProvider =
+final gamesRepositoryProvider =
     Provider((ref) => ApiGamesRepository(api: ref.read(apiProvider)));

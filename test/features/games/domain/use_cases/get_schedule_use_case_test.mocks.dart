@@ -43,19 +43,55 @@ class MockGamesRepository extends _i1.Mock implements _i3.GamesRepository {
   }
 
   @override
-  _i4.Future<_i2.AsyncValue<List<_i5.Game>>> getSchedule(String? teamId) =>
+  _i4.Future<_i2.AsyncValue<List<_i5.Game>>> getSchedule({
+    required String? teamId,
+    required bool? upcomingGamesOnly,
+    int? limit,
+    required bool? forceCacheRefresh,
+  }) =>
       (super.noSuchMethod(
         Invocation.method(
           #getSchedule,
-          [teamId],
+          [],
+          {
+            #teamId: teamId,
+            #upcomingGamesOnly: upcomingGamesOnly,
+            #limit: limit,
+            #forceCacheRefresh: forceCacheRefresh,
+          },
         ),
         returnValue: _i4.Future<_i2.AsyncValue<List<_i5.Game>>>.value(
             _FakeAsyncValue_0<List<_i5.Game>>(
           this,
           Invocation.method(
             #getSchedule,
-            [teamId],
+            [],
+            {
+              #teamId: teamId,
+              #upcomingGamesOnly: upcomingGamesOnly,
+              #limit: limit,
+              #forceCacheRefresh: forceCacheRefresh,
+            },
           ),
         )),
       ) as _i4.Future<_i2.AsyncValue<List<_i5.Game>>>);
+
+  @override
+  Iterable<_i5.Game> getUpcomingGamesOnly({
+    required List<_i5.Game>? allGames,
+    int? limit,
+    DateTime? now,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getUpcomingGamesOnly,
+          [],
+          {
+            #allGames: allGames,
+            #limit: limit,
+            #now: now,
+          },
+        ),
+        returnValue: <_i5.Game>[],
+      ) as Iterable<_i5.Game>);
 }

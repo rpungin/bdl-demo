@@ -10,15 +10,15 @@ class UpcomingGamesView extends ConsumerStatefulWidget {
   const UpcomingGamesView({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _UpcomingEventsState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _UpcomingGamesState();
 }
 
-class _UpcomingEventsState extends ConsumerState<UpcomingGamesView> {
+class _UpcomingGamesState extends ConsumerState<UpcomingGamesView> {
   @override
   void initState() {
     ref
         .read(upcomingGamesProvider.notifier)
-        .getUpcomingGames(teamId: Constants.floridaPanthersTriCode, limit: 3);
+        .getUpcomingGames(teamId: Constants.floridaPanthersTriCode, forceCacheRefresh: false);
     super.initState();
   }
 

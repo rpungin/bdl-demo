@@ -7,10 +7,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
-      children: [PageBackground(),
+    return  Stack(
+      children: [const PageBackground(),
       Column(children: [
-        UpcomingGamesView(),
+        Image.asset("assets/images/panthers_30_anniversary.png"),
+        const UpcomingGamesView(),
       ],)
       ],
     );

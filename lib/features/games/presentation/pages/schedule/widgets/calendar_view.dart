@@ -1,6 +1,5 @@
 import 'package:bdl_demo/core/extensions/context_extensions.dart';
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
-import 'package:bdl_demo/core/presentation/widgets/page_background.dart';
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/calendar_day_cell.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/game_by_date_provider.dart';
@@ -33,15 +32,13 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
         // Container(
         //   color: Colors.white.withOpacity(0.8),
         // ),
-        SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(AppTheme.gridSpacing),
-            child: Column(
-              children: [
-                _buildCalendar(context),
-                const SelectedEventView(),
-              ],
-            ),
+        Padding(
+          padding: const EdgeInsets.all(AppTheme.gridSpacing),
+          child: Column(
+            children: [
+              _buildCalendar(context),
+              const SelectedEventView(),
+            ],
           ),
         )
       ],

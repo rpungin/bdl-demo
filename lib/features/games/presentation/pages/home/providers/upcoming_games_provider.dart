@@ -1,25 +1,31 @@
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
-import 'package:bdl_demo/features/games/domain/use_cases/get_upcoming_games.dart';
-import 'package:bdl_demo/features/games/presentation/providers/providers.dart';
+import 'package:bdl_demo/features/games/domain/use_cases/get_schedule_use_case.dart';
+import 'package:bdl_demo/features/games/presentation/pages/schedule/providers/schedule_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final upcomingGamesUseCaseProvider = Provider<GetUpcomingGamesUseCase>(
-    (ref) => GetUpcomingGamesUseCase(repository: ref.read(repositoryProvider)));
+final upcomingGamesProvider = StateNotifierProvider<
+        UpcomingGamesStateStateNotifier, AsyncValue<List<Game>>>(
+    (ref) => UpcomingGamesStateStateNotifier(
+        getScheduleUseCase: ref.read(scheduleUseCaseProvider)));
 
-final upcomingGamesProvider =
-    StateNotifierProvider<UpcomingGamesStateNotifier, AsyncValue<List<Game>>>(
-        (ref) => UpcomingGamesStateNotifier(
-            getUpcomingGamesUseCase: ref.read(upcomingGamesUseCaseProvider)));
+class UpcomingGamesStateStateNotifier
+    extends StateNotifier<AsyncValue<List<Game>>> {
+  static const upcomingEventsLimit = 3;
+  final GetScheduleUseCase _getScheduleUseCase;
 
-class UpcomingGamesStateNotifier extends StateNotifier<AsyncValue<List<Game>>> {
-  final GetUpcomingGamesUseCase _getUpcomingGamesUseCase;
-
-  UpcomingGamesStateNotifier(
-      {required GetUpcomingGamesUseCase getUpcomingGamesUseCase})
-      : _getUpcomingGamesUseCase = getUpcomingGamesUseCase,
+  UpcomingGamesStateStateNotifier(
+      {required GetScheduleUseCase getScheduleUseCase})
+      : _getScheduleUseCase = getScheduleUseCase,
         super(const AsyncValue.loading());
 
-  Future<void> getUpcomingGames({required String teamId, int? limit}) async {
-    state = await _getUpcomingGamesUseCase.call(teamId, limit: limit);
+  Future<void> getUpcomingGames({
+    required String teamId,
+    required bool forceCacheRefresh,
+  }) async {
+    state = await _getScheduleUseCase.call(
+        teamId: teamId,
+        upcomingGamesOnly: true,
+        limit: upcomingEventsLimit,
+        forceCacheRefresh: forceCacheRefresh);
   }
 }

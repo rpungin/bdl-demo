@@ -15,8 +15,11 @@ class _RootPageState extends ConsumerState<RootPage> {
   late final PageController _pageController;
   @override
   void initState() {
-    ref.read(rootPagesProvider).createPages(context);
     _pageController = PageController();
+    ref.read(rootPagesProvider).createPages(context);
+    ref.read(selectedRootPageProvider.notifier).addListener((pageIndex) {
+      _showPage(pageIndex);
+    });
     super.initState();
   }
 
@@ -50,14 +53,20 @@ class _RootPageState extends ConsumerState<RootPage> {
         currentIndex: selectedPageIndex,
         onTap: (index) {
           if (index != selectedPageIndex) {
-            ref.read(selectedRootPageProvider.notifier).setSelectedPageIndex(index);
-            //_pageController.jumpToPage(index);
-            _pageController.animateToPage(index,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.ease);
-          }},
+            ref
+                .read(selectedRootPageProvider.notifier)
+                .setSelectedPageIndex(index);
+          }
+        },
         items: rootPages.pages.map((e) => e.bottomNavigationBarItem).toList(),
       ),
     );
+  }
+
+  void _showPage(int pageIndex) {
+    if (_pageController.positions.isEmpty) return;
+    //_pageController.jumpToPage(index);
+    _pageController.animateToPage(pageIndex,
+        duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 }

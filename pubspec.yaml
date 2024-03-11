@@ -44,12 +44,15 @@ dependencies:
   retrofit_generator: ^8.1.0
   dio: ^5.4.1
   google_fonts: 6.1.0
-  table_calendar: ^3.1.0
-  intl: ^0.19.0
+  table_calendar: ^3.0.9 # can't be 3.1.0 because amplify_authenticator requires intl 0.18.1 and table_calendar 3.10.0 requires intl 0.19.0 
+  intl: ^0.18.1
   cached_network_image: ^3.3.1
   flutter_svg: ^2.0.10+1
   collection: ^1.18.0
   mocktail: ^1.0.3
+  amplify_flutter: ^1.7.0
+  amplify_auth_cognito: ^1.7.0
+  amplify_authenticator: ^1.5.4
 
 dev_dependencies:
   flutter_test:

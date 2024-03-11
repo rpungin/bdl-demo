@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class EventsCarousel extends ConsumerWidget {
-  static const double height = 164;
+  static const double height = 170;
   final List<Game> games;
   const EventsCarousel({super.key, required this.games});
 

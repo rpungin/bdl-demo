@@ -15,7 +15,6 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //final theme = ref.read(themeProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Florida Panthers',

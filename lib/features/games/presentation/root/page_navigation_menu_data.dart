@@ -3,7 +3,7 @@ import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/features/games/presentation/root/providers/root_pages_provider.dart';
 import 'package:flutter/material.dart';
 
-class RootPageData {
+class PageNavigationMenuData {
   final BuildContext context;
   final RootPageId id;
   final String titleText;
@@ -11,7 +11,7 @@ class RootPageData {
   final Widget icon;
   final Widget destinationPage;
   final BottomNavigationBarItem bottomNavigationBarItem;
-  RootPageData(this.context,
+  PageNavigationMenuData(this.context,
       {required this.id,
       required this.titleText,
       this.titleWidget,

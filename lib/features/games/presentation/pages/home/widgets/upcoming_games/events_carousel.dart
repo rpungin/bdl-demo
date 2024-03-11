@@ -38,6 +38,7 @@ class EventsCarousel extends ConsumerWidget {
                               headerColor: AppTheme.colorPanthersRed,
                             ))
                         : MoreCard(
+                            icon: const Icon(Icons.calendar_month),
                             onTap: () => ref
                                 .read(selectedRootPageProvider.notifier)
                                 .setSelectedPage(RootPageId.schedule)),

@@ -1,4 +1,3 @@
-import 'package:bdl_demo/core/constants.dart';
 import 'package:bdl_demo/core/presentation/widgets/activity_indicator.dart';
 import 'package:bdl_demo/core/presentation/widgets/error_view.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/providers/schedule_provider.dart';
@@ -17,7 +16,7 @@ class _ScheduleViewState extends ConsumerState<ScheduleView> {
   void initState() {
     ref
         .read(scheduleProvider.notifier)
-        .getSchedule(teamId: Constants.floridaPanthersTriCode, upcomingGamesOnly: false, forceCacheRefresh: false);
+        .getSchedule(upcomingGamesOnly: false, forceCacheRefresh: false);
     super.initState();
   }
 

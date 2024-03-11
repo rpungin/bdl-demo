@@ -3,13 +3,11 @@ import 'package:bdl_demo/features/games/domain/use_cases/get_schedule_use_case.d
 import 'package:bdl_demo/features/games/presentation/providers/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final scheduleUseCaseProvider = Provider<GetScheduleUseCase>(
-    (ref) => GetScheduleUseCase(repository: ref.read(repositoryProvider)));
 
 final scheduleProvider =
     StateNotifierProvider<ScheduleStateNotifier, AsyncValue<List<Game>>>(
-        (ref) => ScheduleStateNotifier(
-            getScheduleUseCase: ref.read(scheduleUseCaseProvider)));
+        (ref) => ScheduleStateNotifier( getScheduleUseCase: 
+            GetScheduleUseCase(repository: ref.read(repositoryProvider))));
 
 class ScheduleStateNotifier extends StateNotifier<AsyncValue<List<Game>>> {
   final GetScheduleUseCase _getScheduleUseCase;
@@ -19,11 +17,10 @@ class ScheduleStateNotifier extends StateNotifier<AsyncValue<List<Game>>> {
         super(const AsyncValue.loading());
 
   Future<void> getSchedule({
-    required String teamId,
     required bool upcomingGamesOnly,
     int? limit,
     required bool forceCacheRefresh,
   }) async {
-    state = await _getScheduleUseCase.call(teamId: teamId, upcomingGamesOnly: upcomingGamesOnly, limit: limit, forceCacheRefresh: forceCacheRefresh);
+    state = await _getScheduleUseCase.call(upcomingGamesOnly: upcomingGamesOnly, limit: limit, forceCacheRefresh: forceCacheRefresh);
   }
 }

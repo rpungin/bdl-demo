@@ -6,12 +6,14 @@ class MoreCard extends StatelessWidget {
   final String text;
   final Color backgroundColor;
   final Color? textColor;
+  final Widget? icon;
   final VoidCallback onTap;
   const MoreCard(
       {super.key,
       this.text = "More...",
       this.backgroundColor = AppTheme.colorAccent,
       this.textColor,
+      this.icon,
       required this.onTap});
 
   @override
@@ -23,10 +25,17 @@ class MoreCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppTheme.gridSpacing),
           child: Center(
-              child: Text(
-            text,
-            style: context.textTheme.titleMedium
-                ?.copyWith(color: textColor ?? AppTheme.colorTextDark),
+              child: Column(
+            children: [
+              const Spacer(),
+              icon ?? Container(),
+              Text(
+                text,
+                style: context.textTheme.titleMedium
+                    ?.copyWith(color: textColor ?? AppTheme.colorTextDark),
+              ),
+              const Spacer()
+            ],
           )),
         ),
       ),

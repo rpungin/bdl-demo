@@ -1,8 +1,7 @@
-import 'package:bdl_demo/core/constants.dart';
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/core/presentation/widgets/error_view.dart';
 import 'package:bdl_demo/features/games/presentation/pages/home/providers/upcoming_games_provider.dart';
-import 'package:bdl_demo/features/games/presentation/pages/home/widgets/events_carousel.dart';
+import 'package:bdl_demo/features/games/presentation/pages/home/widgets/upcoming_games/events_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,7 +17,7 @@ class _UpcomingGamesState extends ConsumerState<UpcomingGamesView> {
   void initState() {
     ref
         .read(upcomingGamesProvider.notifier)
-        .getUpcomingGames(teamId: Constants.floridaPanthersTriCode, forceCacheRefresh: false);
+        .getUpcomingGames(forceCacheRefresh: false);
     super.initState();
   }
 

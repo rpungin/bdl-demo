@@ -34,8 +34,9 @@ class _RootPageState extends ConsumerState<RootPage> {
     final rootPages = ref.read(rootPagesProvider);
     final selectedPageIndex = ref.watch(selectedRootPageProvider);
     final RootPageData selectedPage = rootPages.pages[selectedPageIndex];
+    //print("build selectedPageIndex $selectedPageIndex");
     return Scaffold(
-      appBar: AppBar(title: selectedPage.titleWidget),
+      appBar: AppBar(title: selectedPage.title),
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
@@ -65,8 +66,8 @@ class _RootPageState extends ConsumerState<RootPage> {
 
   void _showPage(int pageIndex) {
     if (_pageController.positions.isEmpty) return;
-    //_pageController.jumpToPage(index);
-    _pageController.animateToPage(pageIndex,
-        duration: const Duration(milliseconds: 300), curve: Curves.ease);
+    _pageController.jumpToPage(pageIndex);
+    // _pageController.animateToPage(pageIndex,
+    //     duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 }

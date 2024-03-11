@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final rootPagesProvider = Provider<RootPages>((ref) => RootPages());
 
-enum RootPageId { home, tickets, schedule, games }
+enum RootPageId { home, tickets, schedule, play }
 
 class RootPages {
   List<RootPageData> _pages = [];
@@ -37,8 +37,8 @@ class RootPages {
           icon: const ImageIcon(AssetImage("assets/images/icon_tickets.png")),
           destinationPage: const TicketsPage()),
       RootPageData(context,
-          id: RootPageId.games,
-          titleText: "Games",
+          id: RootPageId.play,
+          titleText: "Play",
           icon: const Icon(Icons.games),
           destinationPage: const GamesPage()),
     ];

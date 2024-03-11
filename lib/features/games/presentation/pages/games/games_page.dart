@@ -1,3 +1,5 @@
+import 'package:bdl_demo/core/presentation/widgets/page_background.dart';
+import 'package:bdl_demo/core/presentation/widgets/place_holder_page_view.dart';
 import 'package:flutter/material.dart';
 
 class GamesPage extends StatelessWidget {
@@ -5,6 +7,14 @@ class GamesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Games Page"));
+    return const Scaffold(
+        body: SafeArea(
+      child: Stack(
+        children: [
+          PageBackground(),
+          Center(child: PlaceHolderPageView(text: "Games")),
+        ],
+      ),
+    ));
   }
 }

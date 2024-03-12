@@ -4,4 +4,4 @@ Android APK file that can be installed on an Android device after allowing insta
 
 iOS app is available in Test Flight. Please let me know your Apple ID email address and I will add you to the test group.
 
-
+The app is developed using the [Flutter Clean Architecture](https://www.dhiwise.com/post/mastering-the-art-of-clean-architecture-in-flutter) patterns.

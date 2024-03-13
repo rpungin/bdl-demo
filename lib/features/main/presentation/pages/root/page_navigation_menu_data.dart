@@ -1,6 +1,6 @@
 import 'package:bdl_demo/core/extensions/context_extensions.dart';
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
-import 'package:bdl_demo/features/games/presentation/root/providers/root_pages_provider.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/providers/root_pages_provider.dart';
 import 'package:flutter/material.dart';
 
 class PageNavigationMenuData {

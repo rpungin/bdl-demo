@@ -1,7 +1,7 @@
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
-import 'package:bdl_demo/features/games/presentation/root/drawer/providers/app_drawer_provider.dart';
-import 'package:bdl_demo/features/games/presentation/root/drawer/providers/selected_drawer_menu_provider.dart';
-import 'package:bdl_demo/features/games/presentation/root/drawer/widgets/drawer_menu_option.dart';
+import 'package:bdl_demo/features/main/presentation/drawer/providers/app_drawer_provider.dart';
+import 'package:bdl_demo/features/main/presentation/drawer/providers/selected_drawer_menu_provider.dart';
+import 'package:bdl_demo/features/main/presentation/drawer/widgets/drawer_menu_option.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

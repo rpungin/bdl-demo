@@ -2,7 +2,7 @@ import 'package:bdl_demo/features/games/presentation/pages/games/games_page.dart
 import 'package:bdl_demo/features/games/presentation/pages/home/widgets/home_page.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/schedule_page.dart';
 import 'package:bdl_demo/features/games/presentation/pages/tickets/tickets_page.dart';
-import 'package:bdl_demo/features/games/presentation/root/page_navigation_menu_data.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/page_navigation_menu_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

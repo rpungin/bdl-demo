@@ -1,5 +1,5 @@
 import 'package:bdl_demo/features/games/presentation/pages/profile/profile_page.dart';
-import 'package:bdl_demo/features/games/presentation/root/root_page.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/root_page.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {

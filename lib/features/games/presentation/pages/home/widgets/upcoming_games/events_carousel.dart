@@ -3,8 +3,8 @@ import 'package:bdl_demo/core/presentation/widgets/card_header.dart';
 import 'package:bdl_demo/core/presentation/widgets/more_card.dart';
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/game_event_card.dart';
-import 'package:bdl_demo/features/games/presentation/root/providers/root_pages_provider.dart';
-import 'package:bdl_demo/features/games/presentation/root/providers/selected_root_page_provider.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/providers/root_pages_provider.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/providers/selected_root_page_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

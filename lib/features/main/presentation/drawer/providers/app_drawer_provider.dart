@@ -1,5 +1,5 @@
-import 'package:bdl_demo/features/games/presentation/root/page_navigation_menu_data.dart';
-import 'package:bdl_demo/features/games/presentation/root/providers/root_pages_provider.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/page_navigation_menu_data.dart';
+import 'package:bdl_demo/features/main/presentation/pages/root/providers/root_pages_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

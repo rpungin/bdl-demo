@@ -56,7 +56,7 @@ void main() {
 }
 
 /// Given a date, return just the date and time (HH:MM) portion
-/// of iso8601String without the seconds and timezone specifier.
+/// of iso8601String without the seconds and time zone specifier.
 /// For example given "2023-09-25T18:00:00Z" return "2023-09-25T18:00"
 
 String _dateAndTime(DateTime date) => date.toIso8601String().substring(0, 16);

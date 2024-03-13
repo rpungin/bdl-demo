@@ -20,5 +20,5 @@ abstract class NhlApi {
 
   @GET("/club-schedule-season/{team}/now")
   Future<HttpResponse<ScheduleApiModel>> getSchedule(
-      @Path("team") String teamTriCode);
+      {@Path("team") required String teamTriCode});
 }

@@ -22,7 +22,8 @@ class _NhlApi implements NhlApi {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<ScheduleApiModel>> getSchedule(String teamTriCode) async {
+  Future<HttpResponse<ScheduleApiModel>> getSchedule(
+      {required String teamTriCode}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

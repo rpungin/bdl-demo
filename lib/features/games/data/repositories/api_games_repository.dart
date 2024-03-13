@@ -41,14 +41,14 @@ class ApiGamesRepository extends GamesRepository {
     try {
       if (_cache.isEmpty || forceCacheRefresh) {
         final httpResponse =
-            await _api.getSchedule(Constants.floridaPanthersTriCode);
+            await _api.getSchedule(teamTriCode: Constants.floridaPanthersTriCode);
         if (httpResponse.response.statusCode == HttpStatus.ok) {
           _cache = httpResponse.data.games.map((e) => e.toEntity()).toList();
           return AsyncValue.data(_cache);
         } else {
           final error = NhlApi.dioExceptionFromResponse(httpResponse);
           if (_cache.isNotEmpty && returnCacheOnError) {
-            log("ERROR getting schedule: $error \n${StackTrace.current}");
+            log("ERROR Bad HTTP status ${httpResponse.response.statusCode} getting all games: $error \n${StackTrace.current}");
             return AsyncValue.data(_cache);
           } else {
             return AsyncValue.error(error, StackTrace.current);

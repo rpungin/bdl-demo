@@ -23,12 +23,6 @@ class GameScoreCard extends StatelessWidget {
             text: "Last Game".toUpperCase(),
             backgroundColor: AppTheme.colorPanthersBlue,
           ),
-          Text(
-            DateFormatUtils.formatMonthDay(game.startTimeInLocalTZ()),
-            style: context.textTheme.titleLarge
-                ?.copyWith(fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
           Row(
             children: [
               EventTeamLogoView(team: game.awayTeam),
@@ -53,6 +47,12 @@ class GameScoreCard extends StatelessWidget {
   Widget _buildCenterView(BuildContext context, Game game) {
     return Column(
       children: [
+        Text(
+          DateFormatUtils.formatMonthDay(game.startTimeInLocalTZ()),
+          style: context.textTheme.titleLarge
+              ?.copyWith(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
         Text(
           "${game.awayTeam.abbrev} @ ${game.homeTeam.abbrev}",
           textAlign: TextAlign.center,

@@ -1,16 +1,7 @@
 # bdl_demo
 
-A new Flutter project.
+Android APK file that can be installed on an Android device after allowing installing apps from unknown sources can be found in this [Google Drive Folder](https://drive.google.com/drive/folders/10u4OnlG7dMux4Zt_xZuzVck7OOW0SnMW?usp=share_link)
 
-## Getting Started
+iOS test build is available via [Test Flight invitation link](https://testflight.apple.com/join/vLlBE90W).
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app is developed using the [Flutter Clean Architecture](https://www.dhiwise.com/post/mastering-the-art-of-clean-architecture-in-flutter) patterns.

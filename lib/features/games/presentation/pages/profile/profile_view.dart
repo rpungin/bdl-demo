@@ -2,7 +2,7 @@ import 'package:amplify_authenticator/amplify_authenticator.dart';
 import 'package:bdl_demo/core/extensions/context_extensions.dart';
 import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/core/presentation/widgets/error_view.dart';
-import 'package:bdl_demo/features/auth/presentation/providers/providers.dart';
+import 'package:bdl_demo/features/authentication/presentation/providers/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

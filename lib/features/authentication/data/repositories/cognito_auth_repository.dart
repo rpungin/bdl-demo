@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:bdl_demo/features/auth/domain/entities/user.dart';
-import 'package:bdl_demo/features/auth/domain/repositories/auth_repository.dart';
+import 'package:bdl_demo/features/authentication/domain/entities/user.dart';
+import 'package:bdl_demo/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CognitoAuthRepository implements AuthRepository {

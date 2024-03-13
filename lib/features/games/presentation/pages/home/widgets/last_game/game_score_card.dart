@@ -3,7 +3,6 @@ import 'package:bdl_demo/core/presentation/themes/app_theme.dart';
 import 'package:bdl_demo/core/presentation/widgets/card_header.dart';
 import 'package:bdl_demo/core/utils/date_format_utils.dart';
 import 'package:bdl_demo/features/games/domain/entities/game.dart';
-import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/buy_tickets_button.dart';
 import 'package:bdl_demo/features/games/presentation/pages/schedule/widgets/event_team_logo_view.dart';
 import 'package:flutter/material.dart';
 
@@ -23,22 +22,16 @@ class GameScoreCard extends StatelessWidget {
             text: "Last Game".toUpperCase(),
             backgroundColor: AppTheme.colorPanthersBlue,
           ),
-          Row(
-            children: [
-              EventTeamLogoView(team: game.awayTeam),
-              Expanded(child: _buildCenterView(context, game)),
-              EventTeamLogoView(team: game.homeTeam)
-            ],
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: AppTheme.gridSpacing),
+            child: Row(
+              children: [
+                EventTeamLogoView(team: game.awayTeam),
+                Expanded(child: _buildCenterView(context, game)),
+                EventTeamLogoView(team: game.homeTeam)
+              ],
+            ),
           ),
-          game.isFutureGame
-              ? Row(
-                  children: [
-                    const Spacer(),
-                    BuyTicketsButton(game: game),
-                    const Spacer()
-                  ],
-                )
-              : Container(),
         ],
       ),
     );

@@ -12,17 +12,20 @@ class EventTeamLogoView extends StatelessWidget {
   Widget build(BuildContext context) {
     final score = team.score;
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         ImageWidget(
           url: team.logo,
           width: logoSize,
           height: logoSize,
         ),
-        Text(
-          score?.toString() ?? "",
-          style: context.textTheme.titleMedium
-              ?.copyWith(fontWeight: FontWeight.bold),
-        ),
+        score == null
+            ? Container()
+            : Text(
+                score.toString(),
+                style: context.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
       ],
     );
   }

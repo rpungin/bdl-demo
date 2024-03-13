@@ -20,7 +20,7 @@ class CalendarDayCell extends StatelessWidget {
           child: Column(
             children: [
               _buildHeader(context, day, game),
-              _buildOpponentLogo(context, game),
+              Expanded(child: _buildOpponentLogo(context, game)),
               _buildFooter(context, game),
             ],
           )),
@@ -39,7 +39,7 @@ class CalendarDayCell extends StatelessWidget {
           ? AppTheme.colorPanthersRed
           : AppTheme.colorPanthersBlue;
     }
-    final textStyle = context.textTheme.bodySmall?.copyWith(color: textColor);
+    final textStyle = context.textTheme.bodySmall!.copyWith(color: textColor);
     return ColoredBox(
       color: backgroundColor,
       child: Padding(
@@ -48,14 +48,15 @@ class CalendarDayCell extends StatelessWidget {
           children: [
             Text(
               day.day.toString(),
-              style: textStyle?.copyWith(fontWeight: FontWeight.bold),
+              style: textStyle.copyWith(fontWeight: FontWeight.bold),
             ),
             const Spacer(),
             game == null
                 ? Container()
                 : Text(
                     game.isHomeGame ? "HOME" : "AWAY",
-                    style: textStyle,
+                    style:
+                        textStyle.copyWith(fontSize: textStyle.fontSize! - 3),
                   )
           ],
         ),
@@ -64,22 +65,21 @@ class CalendarDayCell extends StatelessWidget {
   }
 
   Widget _buildOpponentLogo(BuildContext context, Game? game) {
-    return Expanded(
-      child: game == null
-          ? Container()
-          : Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2.0),
-              child: ImageWidget(
-                url: game.getOpponentTeam.logo,
-                width: logoSize,
-                height: logoSize,
-              ),
+    return game == null
+        ? Container()
+        : Padding(
+            padding: const EdgeInsets.symmetric(vertical: 2.0),
+            child: ImageWidget(
+              url: game.getOpponentTeam.logo,
+              width: logoSize,
+              height: logoSize,
             ),
-    );
+          );
   }
 
   Widget _buildFooter(BuildContext context, Game? game) {
     if (game == null) return Container();
+    final textStyle = context.textTheme.bodySmall!;
     final String text;
     if (game.isFutureGame) {
       text = DateFormatUtils.formatTime(game.startTimeInVenueTZ());
@@ -89,7 +89,8 @@ class CalendarDayCell extends StatelessWidget {
     }
     return Text(
       text,
-      style: context.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
+      style: textStyle.copyWith(
+          fontWeight: FontWeight.bold, fontSize: textStyle.fontSize! - 2),
     );
   }
 }

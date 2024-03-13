@@ -10,11 +10,8 @@ import 'package:flutter/material.dart';
 class GameEventCard extends StatelessWidget {
   final Game game;
   final Color? headerColor;
-  const GameEventCard({
-    Key? key,
-    required this.game,
-    this.headerColor
-  }) : super(key: key);
+  const GameEventCard({Key? key, required this.game, this.headerColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,10 @@ class GameEventCard extends StatelessWidget {
         children: [
           CardHeader(
             text: DateFormatUtils.formatMonthDay(game.startTimeInLocalTZ()),
-            backgroundColor: headerColor ?? (game.isHomeGame
-                ? AppTheme.colorPanthersRed
-                : AppTheme.colorPanthersBlue),
+            backgroundColor: headerColor ??
+                (game.isHomeGame
+                    ? AppTheme.colorPanthersRed
+                    : AppTheme.colorPanthersBlue),
           ),
           Row(
             children: [
@@ -36,12 +34,16 @@ class GameEventCard extends StatelessWidget {
             ],
           ),
           game.isFutureGame
-              ? Row(
-                  children: [
-                    const Spacer(),
-                    BuyTicketsButton(game: game),
-                    const Spacer()
-                  ],
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: AppTheme.gridSpacing),
+                  child: Row(
+                    children: [
+                      const Spacer(),
+                      BuyTicketsButton(game: game),
+                      const Spacer()
+                    ],
+                  ),
                 )
               : Container(),
         ],

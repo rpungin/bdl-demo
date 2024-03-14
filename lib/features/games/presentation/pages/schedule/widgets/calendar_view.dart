@@ -26,22 +26,24 @@ class _CalendarViewState extends ConsumerState<CalendarView> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        //const BlurredPageBackground(),
-        // Container(
-        //   color: Colors.white.withOpacity(0.8),
-        // ),
-        Padding(
-          padding: const EdgeInsets.all(AppTheme.gridSpacing),
-          child: Column(
-            children: [
-              _buildCalendar(context),
-              const SelectedEventView(),
-            ],
-          ),
-        )
-      ],
+    return SingleChildScrollView(
+      child: Stack(
+        children: [
+          //const BlurredPageBackground(),
+          // Container(
+          //   color: Colors.white.withOpacity(0.8),
+          // ),
+          Padding(
+            padding: const EdgeInsets.all(AppTheme.gridSpacing),
+            child: Column(
+              children: [
+                _buildCalendar(context),
+                const SelectedEventView(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 

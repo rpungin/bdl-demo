@@ -6,12 +6,24 @@ import 'package:bdl_demo/features/authentication/presentation/providers/provider
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ProfileView extends ConsumerWidget {
+class ProfileView extends ConsumerStatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends ConsumerState {
+  @override
+  void initState() {
     ref.read(signInUseCasePovider).call();
+    super.initState();
+  }
+
+
+
+  @override
+  Widget build(BuildContext context) {
     final currentUser = ref.watch(currentUserProvider);
     return AuthenticatedView(
       child: Center(

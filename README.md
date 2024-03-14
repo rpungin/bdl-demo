@@ -4,4 +4,4 @@ Android APK file that can be installed on an Android device after allowing insta
 
 iOS test build is available via [Test Flight invitation link](https://testflight.apple.com/join/vLlBE90W).
 
-The app is developed using the [Flutter Clean Architecture](https://www.dhiwise.com/post/mastering-the-art-of-clean-architecture-in-flutter) patterns.
+The app is developed using the [Flutter Clean Architecture](https://miro.com/app/board/uXjVNHu_KbQ=/?share_link_id=992927997783) patterns.
